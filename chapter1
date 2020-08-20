@@ -1,1 +1,230 @@
+Starting on section 1.4
+Self Test Exercises 
+
+
+16. If the following statement were used in a C++ program, what would it cause to be written on the screen?
+  cout<< "C++ is easy to understand.";
+   - it would produce errors without everything else: otherwise to print that out, it would need to look like this 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    cout<< "C++ is easy to understand.";
+}
+
+
+17. What is the meaning of \n as used in the following statement(Display 1.8)?
+  cout<<"Enter the number of peas in a pod:\n";
+  - new line
+  
+18. What is the meaning of the following statement?(Display 1.8)
+  cin>>peasPerPod;
+  It is getting user input and declaring that input at peasPerPod
+  
+19. What is the meaning of the following statment(Display 1.8)
+  totalPeas = numberOfPods * peasPerPod;
+  math expression
+  
+20. What does #include <iostream> mean?
+  it is to allow C++ to recieve input/output 
+  
+21. What, if anything, is wrong with the following #include directives?
+  a.#include <iostream > - space after
+  b.#include < iostream> - space before
+  c.#include <iostream> - it's fine
+  
+22. What are the three main kinds of program errors?
+  syntax, runtime and logic errors
+
+23. What kind of errors are discovered by the compiler?
+  syntax and runtime 
+
+24. If you omit a punctuiation symbol (semicolon), an error is produced. What kind of error is it?
+  syntax:  error: expected ‘;’ before ‘}’ token
+
+25. Omitting the final brace } produces an error. What kind of error is it?
+  syntax :  error: expected ‘}’ at end of input
+
+26. Suppose your program has a situation about it which the compiler reports a warning. What should you do about it? Give the text's answer and your local answer. 
+  find out where the error is and figure out what went wrong 
+
+27. Suppose you write a program that computes interest on a daily basis, however you incorrectly write it so that it produces an annual interest instead. What kind of error is it?
+  logic 
+
+
+****PRACTICE PROGRAMS*****
+1. Using your text editor, rewrite Display 1.8 (I shortened it)
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numberOfPods, peasPerPod, totalPeas;
+    cout << "Press return after entering a number.\n";
+    cout << "Enter the number of pods:\n";
+    cin >> numberOfPods;
+    cout << "Enter the number of peas in a pod:\n";
+    cin >> peasPerPod;
+    totalPeas = numberOfPods * peasPerPod;
+    cout << "You have this many peas total :" << totalPeas << endl;
+}
+
+2. Change it so that it asks for the users favorite number.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int favoriteNumber;
+    cout << "Press return after entering a number.\n";
+    cout << "Enter your favorite number:\n";
+    cin >> favoriteNumber;
+    cout << "Your favorite number is :" << favoriteNumber << endl;
+}
+
+3. Write a program that asks for user for 2 numbers and compute the sum of it
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int number1, number2;
+    cout << "Press return after entering a number.\n";
+    cout << "We're adding two numbers now.\n";
+    cout << "Enter the first number you wanna add:\n";
+    cin >> number1;
+    cout << "Enter the second number you wanna add:\n";
+    cin >> number2;
+    cout << "The sum is :" << number1 + number2 << endl;
+}
+
+
+4. Change it again to subtraction. What happens if it's negative or super large?
+//I changed it from int to double, but both work
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double number1, number2;
+    cout << "Press return after entering a number.\n";
+    cout << "We're subtracting two numbers now.\n";
+    cout << "Enter the first number you wanna subtract:\n";
+    cin >> number1;
+    cout << "Enter the second number you wanna subtract:\n";
+    cin >> number2;
+    cout << "The difference is :" << number1 - number2 << endl;
+}
+
+
+5. Division. What happens if 2nd number is 0?
+if 0 = inf
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double number1, number2;
+    cout << "Press return after entering a number.\n";
+    cout << "We're dividing two numbers now.\n";
+    cout << "Enter the first number you wanna divide:\n";
+    cin >> number1;
+    cout << "Enter the second number you wanna divide:\n";
+    cin >> number2;
+    cout << "The division is :" << number1/number2 << endl;
+}
+
+
+******PROGRAMMING PROJECTS************
+1. Write a C++ program that reads two integers and outputs both sum and product
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double number1, number2;
+    cout << "Press return after entering a number.\n";
+    cout << "We're adding and multiplying two numbers now.\n";
+    cout << "Enter the first number you wanna add/multiply:\n";
+    cin >> number1;
+    cout << "Enter the second number you wanna add/multiply:\n";
+    cin >> number2;
+    cout << "The addition is :" << number1 + number2 << endl;
+    cout << "The product is :" << number1 * number2 << endl;
+}
+
+
+
+
+2. Write a program that prints CS
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    
+    cout << "*************************************************************\n";
+    cout << "       ccccccccc    ssss       !! \n";
+    cout << "      cc           ss          !!    \n"; 
+    cout << "     cc           ss           !!                 \n";
+    cout << "    cc             ss          !!            \n";
+    cout << "   cc               ss         !!           \n";
+    cout << "    cc                ss       !!        \n";
+    cout << "     cc               ss       !!         \n";
+    cout << "      cc             ss        !!     \n";
+    cout << "       cc           ss         !!              \n";
+    cout << "        cccccccc. ssss         00                   \n";
+    cout << "**************************************************************\n";
+    cout << "This was pretty annoying\n";
+    
+}
+
+
+
+
+
+3. Write a program where the user enters quarters, nickels and dimes and then sums up the total dollar amount. 
+//I added pennies too
+int main()
+{
+    double quarters, nickels, dimes, pennies;
+    cout << "Press return after entering a number.\n";
+    cout << "We're adding up chump change now.\n";
+    cout << "Enter the number of quarters:\n";
+    cin >> quarters;
+    cout << "Enter the number of nickels:\n";
+    cin >> nickels;
+    cout << "Enter the number of dimes:\n";
+    cin >> dimes;
+    cout << "Enter the number of pennies:\n";
+    cin >> pennies;
+    cout << "You have  :" << quarters*.25 + nickels*0.05 + dimes*0.10 + pennies*0.01 << " dollars"<< endl;
+    
+}
+
+
+
+
+
+4. Write a program that lets the user enter a time in seconds and then outputs how far an object would drop if it is in free fall. 
+#include <iostream>
+using namespace std;
+
+//gravity = 32ft/second
+// also changed it back to int instead of keeping it at double. double is an invalid operand 
+
+int main()
+{
+    int seconds;
+    cout << "Press return after entering a number.\n";
+    cout << "We're dropping shit now.\n";
+    cout << "Enter some number of seconds:\n";
+    cin >> seconds;
+   
+    cout << "Based off of time, it fell :" << (32 * seconds^2) /2 << " feet"<< endl;
+    
+}
+
+
 
