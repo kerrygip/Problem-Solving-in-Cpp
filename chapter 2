@@ -220,4 +220,325 @@ prints - 030406
 
 
 
-21. 
+21. Write an if-else statement that outputs the word High if the  value of the variable score is greater than 100 and Low if score is 100 or less. Score is int
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int score;
+    cout << "Give me a number :" <<endl;
+    cin >> score;
+ 
+    if (score >100)
+{
+        cout <<"High" << endl;
+}  
+    else
+        cout <<"Low"<< endl;
+}    
+  
+
+
+22. Suppose savings and expenses are variables of type double and have been given values. Write an if-else statement that outputs the word Solvent, decreases the value of savings by the value of expenses and sets the value of expenses to 0. 
+Provided that savings is at least as learge as expenses.
+If savings is less than expenses, the if-else statement should output the word Bankrupt
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double savings, expenses;
+    cout << "Give me your savings :" <<endl;
+    cin >> savings;
+    cout << "Give me your expenses :" <<endl;
+    cin >> expenses;
+    savings = savings - expenses;
+{    
+    if (savings > expenses)
+
+        cout <<"Solvent" << endl;
+ 
+    else
+        cout <<"Bankrupt"<< endl;
+}    
+  
+} 
+
+23. Write an if-else statement that outputs the word Passed if the variable exam is greater than or equal to 60 and value of programs_done is greater than or equal to 10
+Otherwise print failed.
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int exam, programs_done;
+    cout << "Give me your exam score :" <<endl;
+    cin >> exam;
+    cout << "How many programs did you finish?" <<endl;
+    cin >> programs_done;
+    
+{    
+    if ((exam >= 60) && (programs_done >=10))
+
+        cout <<"Pass" << endl;
+ 
+    else
+        cout <<"Fail"<< endl;
+}    
+  
+} 
+
+
+
+
+
+24. Write an if-else statement that outputs the word Warning provided that the variable temperature is greater than or equal to 100 or 
+the variable pressure is greater than or equal to 200 or both
+Otherwise, output the word OK. 
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int pressure, temperature;
+    cout << "Give me the temperature :" <<endl;
+    cin >> temperature;
+    cout << "What is the PSI?" <<endl;
+    cin >> pressure;
+    
+{    
+    if (((temperature >= 100) && (pressure >=200)) || ((temperature >= 100) || (pressure >=200)))
+
+        cout <<"warning" << endl;
+ 
+    else
+        cout <<"ok"<< endl;
+}    
+  
+} 
+
+25. Consider x^2 - x -2.
+Describe where this is quadratic is positive, involves describing a set of numbers that are either less than the smaller root(-1) or greater than the larger root(+2). 
+Write a C++ expression that is true when this formula has positive values
+
+
+
+26. Consider x^2 - 4x + 3
+Describe where this quadratic describing a set of numbers that is simultaneously greater than the smaller root(+1) and less than larger root(+3) 
+Write a C++ that is true when value of quadratic is negative
+
+
+
+
+27. What is the following output of the cout statements? Explain your answer
+  a. if (0)
+      cout <<"0 is true";
+     else
+      cout << "0 is false";
+        <<endl;
+        // 0 is false. In a bool, 0 is false, 1 is true
+  b. if (1)
+      cout <<"1 is true";
+     else
+      cout << "1 is false";
+        <<endl;
+        // 1 is true. In a bool, 0 is false, 1 is true
+  c. if (-1)
+      cout <<"-1 is true";
+     else
+      cout << "-1 is false";
+        <<endl;
+        // -1 is true. In a bool, 0 is false
+
+
+
+
+28. What is the output
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=10;
+    while (x>0)
+{
+    cout <<x<< endl;
+    x= x-3;
+}
+}
+
+10,7,4,1
+
+29. What output would be produced if the > sign were replaced with < in question 28?
+nothing would be output. it would skip the loop
+
+
+30. What is the output produced by 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=10;
+    do {
+        cout <<x <<endl;
+        x=x-3;
+  }     while (x>0);
+
+}
+10,7,4,1
+
+
+
+
+
+31. What is the output by
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=-42;
+    do {
+        cout << x <<endl;
+        x=x-3;
+  }     while (x>0);
+
+}
+
+
+-42
+
+
+32. What is the biggest difference between while and do-while?
+While will evaluate the equation and see if it needs to be ran or not, do-while will run the equation regardless if the statement is true or not. 
+
+
+
+
+33.What is the output 
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=10;
+    while (x>0)
+{   
+    cout <<x << endl;
+    x = x+3;
+}
+}
+
+Infinite loop
+
+
+
+34. Write a C++ program that outputs numbers 1-20
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x=1;
+    while (x <= 20)
+{   
+    cout <<x << endl;
+    x = x+1;
+}
+}
+
+
+
+35. Rewrite the if-else statement
+
+if(x<0){x=7; cout<<"x is now positive";}
+else {x=-7; cout<<"x is now negative";}
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+    if(x<0)
+{
+    x=7; 
+    cout<<"x is now positive";
+    
+}
+    else 
+{
+    x=-7; 
+    cout<<"x is now negative";
+    
+}
+}
+
+
+36.  What would be output?
+//cout << "Hello from";
+cout<< "self test exercise";
+- self test exercise
+
+
+
+37. Write a C++ that converts gallons to liters
+//3.78533 L in a gallon
+
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int gallons;
+    const double liters = 3.78533;
+    cout<<"Convert gallons to L :"<<endl;
+    cin >> gallons;
+    cout << gallons*liters <<" Liters" <<endl;
+}
+
+
+
+******PRACTICE PROGRAMS*******
+
+1. Write a C++ program. A metric ton is 35,273.92 oz
+Write a program that will read the weight of cereal in oz and output it to metric tons.
+Also a program that will calculate how many boxes it will take to yield 1 ton of cereal.
+
+
+
+
+2. Write a program that:
+  a. inputs a double as the base an int as exponent
+  b. multiples base number by itself using a loop for the number of times in int
+  c. outputs exponential
+ extra credit: use an if statement for 0 exponential (answer is 1) and write it so that it will deal with a negative exponent
+ 
+ 
+ 
+ 3. Convert a treadmill timer that converts mph to minutes and seconds per mile. Ex. 6.5mph should be 9 minutes and 13.8 seconds/mile.
+ 
+ 
+ 
+ 4. Create a conversational dialogue using do-while
+    say hello, ask them about their day, respond accordingly
+ 
+
+
+
+
+
+
+***PROGRAMMING PROJECTS**************
+
+
+
