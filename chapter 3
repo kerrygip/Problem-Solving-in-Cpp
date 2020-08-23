@@ -1,0 +1,90 @@
+*** SELF TEST EXERCISES***
+
+
+
+5. What is the output?
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int x = 2;
+    cout << "start\n";
+    
+    if (x <= 3)
+        cout <<"Hello from the 2nd if" <<endl;
+    else
+        cout <<"Hello from else" <<endl;
+    cout <<"end"<<endl;
+    
+    cout <<"start again"<<endl;
+    
+    if (x>3)
+        if (x!=0)
+            cout <<"hello from 2nd if" <<endl;
+        else
+            cout <<"hello from the else" <<endl;
+    cout <<"end again"<<endl;        
+}
+- start
+hello from the 2nd if
+end
+start again
+end again
+
+
+6. What is the output?
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int extra = 2;
+    if (extra <0)
+        cout <<"small"<<endl;
+    else if (extra ==0)
+        cout <<"medium"<<endl;
+    else
+        cout <<"large"<<endl;
+    
+}
+- large
+
+
+7. If extra changed to -37 in problem 6
+  - then output would be small
+  
+  
+8  If extra changed to 0 in problem 6
+  - then output would be medium
+
+
+
+
+
+
+15. What is the output?
+  #include <iostream>
+using namespace std;
+
+int main()
+{
+    int firstchoice = 1;
+    switch (firstchoice+1)
+{
+    case 1:
+        cout<<"roast beef"<<endl;
+        break;
+    case 2:
+        cout<<"roast worms"<<endl;
+        break;
+    case 3:
+        cout <<"chocolate ice cream"<<endl;
+        break;
+    default:
+        cout<<"eat up"<<endl;
+}    
+    
+}
+
+- roast worms
