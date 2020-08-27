@@ -1,0 +1,103 @@
+*****Self- Test Exercises*****
+
+1. Describe the different in the meaning of int a[5] and the meaning of a[4]. What is the meaning of [5] and [4]?
+int a[5] is the actual array and how big it will be
+a[4] is one of the indexed variables in int a[5]. 
+
+2. In the array declaration
+double score[5];
+
+state the following
+  a. The array name : score
+  b. Base Type: double
+  c. Declard size of array: 5
+  d. Range of values that an index for this array can have: range 0,1,2,3,4
+  e. One of the indexed variables or elements of this array : score[3]
+  
+  
+3. Idenify an errors in the following array declarations: 
+  a. intx[4] = {8,7,6,4,3}; - too many indexed options
+  b. intx[] = {8,7,6,4}; - is fine
+  c. const int SIZE = 4; - is fine
+  d. intx[SIZE]; - also is fine
+  
+4. What is the output of the following code?
+  char symbol[3] = {'a', 'b', 'c'};
+  for (int index = 0; index < 3; index++)
+    cout << symbol[index];
+    
+    - abc
+    
+5. What is the output of the following code?
+  double a[3] = {1.1, 2.2, 3.3};
+    cout << a[0] << " " << a[1] << " " << a[2] << endl;
+      a[1] = a[2];
+    cout << a[0] << " " << a[1] << " " << a[2] << endl; 
+    1.1 2.2 3.3
+    1.1 3.3 3.3
+    
+6. What is the output of the following code?
+  int i, temp[10];
+  for (i = 0; i < 10; i++)
+    temp[i] = 2 * i;
+  for (i = 0; i < 10; i++)
+     cout << temp[i] << " ";
+    cout << endl;
+  for (i = 0; i < 10; i = i + 2)
+    cout << temp[i] << " ";
+    
+    - 2,4,6,8,10,12,14,16,18 (first loop)? But only 9 numbers
+    -  0,4,8,12,16????? 
+    
+7. What is wrong with the following piece of code?
+  int sampleArray[10];
+    for (int index = 1; index <= 10; index++) << this is what's wrong. It is out of range. index cannot = 10, it is trying to fill an extra slot
+      sampleArray[index] = 3 * index;     
+      
+8. Suppose we expect the elements of the array a to be ordered so that
+    a[0] ≤ a[1] ≤ a[2] ≤ ...
+The following code is supposed to output such a warning, but it contains a bug.
+What is it?
+double a[10];
+<Some code to fill the array a goes here.>       
+for (int index = 0; index < 10; index++)
+  if (a[index] > a[index + 1]) -------------can't index + 1 after 9. index 9 + 1 = index[10] and thats a no no 
+    cout << "Array elements " << index << " and "
+      << (index + 1) << " are out of order.";      
+      
+9. Write a program that will fill an array a with 20 values of type int read in from the keyboard.
+Just give the declarations for the array and all the variables
+
+int a[20];
+cout <<"Enter 20 numbers for an array: "<< endl;
+for (i=0, i<20, i++) // starting at 0 and ending at less than 20, add one to count
+  cin>> a[i] // fill in the array
+  
+
+
+10. int yourArray[7];
+When you run this program how many bytes of memory will this array consume. int uses 2 bytes.
+Suppose the system assigns the memory address 1000 to the indexed variable yourArray[0]. 
+What will the address of the indexed variable yourArray[3]?
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
