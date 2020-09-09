@@ -514,7 +514,19 @@ int main()
 Write a program that will read the weight of cereal in oz and output it to metric tons.
 Also a program that will calculate how many boxes it will take to yield 1 ton of cereal.
 
+#include <iostream>
+using namespace std;
 
+int main(){
+    double ton, oz,cereal;
+    ton = 35273.92;
+    cereal = 21;
+    cout << "What is the weight of the cereal? " <<endl;
+    cin >> oz;
+    cout<< "Cereal weighs " << oz << " oz. That equals to " << oz/ton <<" tons." << endl;
+    cout << "A medium cereal box weighs 21 oz so to equal one ton, you'll need " << ton/cereal << " boxes of cereal" << endl;
+    
+}
 
 
 2. Write a program that:
@@ -523,10 +535,40 @@ Also a program that will calculate how many boxes it will take to yield 1 ton of
   c. outputs exponential
  extra credit: use an if statement for 0 exponential (answer is 1) and write it so that it will deal with a negative exponent
  
+ #include<iostream>
+ #include<cmath>
+ using namespace std;
+ 
+ int main(){
+     double base;
+     int exponent;
+     int i = 1;
+     
+     cout <<"Give me an exponent "<< endl;
+     cin >> exponent;
+     cout <<"Give me a base number "<< endl;
+     cin >> base;
+     if (exponent == 0){
+         cout <<base<< "^"<< exponent<< " is 1"<< endl;
+     }
+     while (exponent > i){cout <<base<< "^"<< exponent<< " is "<< pow(base,exponent)<<" "<< i++;}
+     
+     //something is missing in the loop, idk how to make it so that it loops it starting from exponent 1 and going up to exponent
  
  
  3. Convert a treadmill timer that converts mph to minutes and seconds per mile. Ex. 6.5mph should be 9 minutes and 13.8 seconds/mile.
- 
+ int main(){
+    double mph, minutes, seconds;
+    int minute;
+    cout<< "How fast were you going on the treadmill(mph)? " <<endl;
+    cin >> mph;
+    minutes =60/mph; //for total time
+    minute = 60/mph; // to use for separation of seconds
+    seconds = minutes- minute;
+    
+    
+    cout <<"You were going "<< minute <<" minutes and "<< seconds <<" seconds per mile" << endl;
+}
  
  
  4. Create a conversational dialogue using do-while
