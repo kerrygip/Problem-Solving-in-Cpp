@@ -1,1 +1,74 @@
-Self Test Exercises
+*****SELF TEST EXERCISES***********
+
+1. Determine the value of these expression 
+sqrt(16.0) = 4
+sqrt(16)  = 4
+pow(2.0, 3.0) = 8
+pow(2, 3) = 8
+pow(2.0, 3) = 8
+pow(1.1, 2) = 1.21
+abs(3) = 3
+abs(−3) = 3
+abs(0) = 0
+fabs(−3.0) = 3 
+fabs(−3.5) = 3.5 
+fabs(3.5) = 3.5
+ceil(5.1) = 6
+ceil(5.8) = 6
+floor(5.1) = 5
+floor(5.8) = 5
+pow(3.0, 2)/2.0 = 4.5
+pow(3.0, 2)/2 = 4.5
+7/abs(−2) = 3.5
+(7 + sqrt(4.0))/3.0 = 3
+sqrt(pow(3, 2)) = 3
+
+2. Convert into c++
+  a. sqrt( x+y)
+  b. pow (x, (y+7))
+  c. sqrt (area + fudge)
+  d. (sqrt(time + tide))/ nobody
+  e. -b + (sqrt(pow(b,2)) - (4*a*c))/ (2*a)
+  f. abs(x-y)
+  
+ 3. Write a c++ program to compute the sqrt of PI. Use const double PI
+ #include<iostream>
+#include<cmath>
+using namespace std;
+
+int main(){
+    double PI;
+    cout << sqrt(PI) << endl;
+}
+// it output 0?
+
+4. Write programs 
+  a. Determine whether or not compiler will allow #include<iostream> anywhere on the line or
+    if # needs to be flush against the wall
+      - online compiler allows
+   b. Determine if your compiler will aloow space between include  
+      - online compiler allows
+
+5.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
