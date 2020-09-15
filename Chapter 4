@@ -239,6 +239,25 @@ int inOrder(int n1, int n2, int n3){
 12. Write a function definition for a function called even that takes one
 argument of type int and returns a bool value. The function returns true
 if its one argument is an even number; otherwise, it returns false.
+#include<iostream>
+using namespace std;
+
+int even(int n1);
+
+int main(){
+    int num1;
+    cout <<"give me a number " << endl;
+    cin>> num1;
+    cout << "your numbers are " << /*call the bool here <<*/ endl;
+    
+}
+
+int even(int n1){
+    if (n1 %2 ==0)
+        return true;
+    else 
+        return false; 
+}
 
 
 
@@ -246,19 +265,51 @@ if its one argument is an even number; otherwise, it returns false.
 of type char and returns a bool value. The function returns true if the
 argument is a decimal digit; otherwise, it returns false.
 
+int isDigit(char n1);
 
+int main(){
+    int num1;
+    cout <<"give me a number " << endl;
+    cin>> num1;
+    cout << "your numbers are " << /*call the bool here <<*/ endl;
+    
+}
+// there's something that shows decimals. like precision??
+int isDigit(int n1){
+    if (n1 %2 ==0)
+        return false;
+    else 
+        return true; 
+}
 
 14. Write a function definition for a function isRootOf that takes two arguments
 of type int and returns a bool value. The function returns true if the first
 argument is the square root of the second; otherwise, it returns false.
 
+#include<iostream>
+#include<cmath>
+using namespace std; 
+int isRootOf(int n1, int n2);
+
+int main(){
+    int num1, num2;
+    cout <<"give me a number " << endl;
+    cin>> num1;
+    cout << "your numbers are " << /*call the bool here <<*/ endl;
+    
+}
+
+int isRootOf(int n1, int n2){
+    if (sqrt(n1) == n2)
+        return true;
+    else 
+        return false; 
+}
 
 
 
 
-
-
-
+15. 
 
 
 
