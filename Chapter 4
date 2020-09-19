@@ -228,12 +228,10 @@ int main(){
     bool(); // something goes here to connect it. This seems to be my weakest link
     
 }
-
-int inOrder(int n1, int n2, int n3){
-    if (n1 <n2 && n2<n3)
+bool inOrder(int n1, int n2, int n3){
+    
+    return (n1 <= n2 && n2=<n3)
         return true;
-    else 
-        return false; 
 }    
 
 12. Write a function definition for a function called even that takes one
@@ -251,12 +249,9 @@ int main(){
     cout << "your numbers are " << /*call the bool here <<*/ endl;
     
 }
-
-int even(int n1){
-    if (n1 %2 ==0)
-        return true;
-    else 
-        return false; 
+bool even(int n1){
+    return (n1 %2 ==0)
+     
 }
 
 
@@ -309,25 +304,286 @@ int isRootOf(int n1, int n2){
 
 
 
-15. 
+15. What is the purpose of the comment that accompanies a function declaration?
+// the comment after a function declaration tells the user how the program is supposed to work
+
+16. What is the principle of procedural abstraction as applied to function definitions?
+// encapsulation: the user shouyld not have to look at the body to know how it works. The function declaration and comment should 
+be all the user needs to know how it works 
+
+17. What does it mean when we say the programmer who uses a function
+should be able to treat the function like a black box? (Hint: This question
+is very closely related to the previous question.)
+// the function should just return the value that is called with the arguments 
+
+18. Carefully describe the process of program testing.
+// test the program on input values that you'd know the answer for after doing it by hand
+
+19. Consider two possible definitions for the function unitPrice. One is the
+definition given in Display 4.10. The other definition is the same except
+that the type cast static_cast<double>(2) is replaced with the constant
+2.0; in other words, the line
+radius = diameter/static_cast<double>(2);
+is replaced with the line
+radius = diameter/2.0;
+Are these two possible function definitions black-box equivalent?
+
+// dude the pizza box example doesn't work. I did it without functions so I wouldn't know 
+//but the answer is yes
+
+Pea example
+#include<iostream>
+using namespace std;
+
+double estTotal(int minPeas, int maxPeas, int podCount);
+
+int main(){
+    
+    int maxCount, minCount, podCount;
+    double averagePea, yield;
+    
+    cout<<"enter num/max number of peas in a pod: "<< endl;
+    cin >> minCount >> maxCount;
+    cout <<"enter number of pods: "<< endl;
+    cin >> podCount;
+    cout << "enter average weight of peas in ounces "<< endl;
+    cin>>averagePea;
+    
+    yield = estTotal(minCount,maxCount, podCount) * averagePea;
+    
+    cout<< "min number of peas "<< minCount <<endl;
+    cout<< "max number of peas "<< maxCount << endl;
+    cout<< "pod count " << podCount<< endl;
+    cout<< "average pea weight is "<< averagePea<< endl;
+    cout<< "average yield is " << yield << endl;
+}
+
+double estTotal(int minPeas, int maxPeas, int podCount){
+    double averagePea;
+    
+    averagePea = (maxPeas + minPeas)/2.0;
+    return (podCount * averagePea);
+}
 
 
 
+//NOTES
+// local variables declared inside main are local to main
+// local variables declared inside function definition is local to function definition
+// so they can have same name but are different variables 
+
+constant demo
+
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+const double PI = 3.1459;
+double area(double radius);
+double volume(double radius);
+
+int main(){
+    
+    double radiusOfBoth, areaOfCircle, volumeOfSphere;
+    
+    cout<< "enter a radius for both in inches "<< endl;
+    cin>> radiusOfBoth;
+    
+    areaOfCircle = area(radiusOfBoth);
+    volumeOfSphere = volume(radiusOfBoth);
+    
+    cout<< "radius is "<< radiusOfBoth<<endl;
+    cout<<"area of circle is "<<areaOfCircle<<endl;
+    cout<< "volume of spehere is "<< volumeOfSphere<< endl;
+}
+
+double area(double radius){
+    return (PI*pow(radius,2));
+}
+
+double volume(double radius){
+    return(4/3 * PI * pow(radius,3));
+}
+
+Law office example 
+#include<iostream>
+using namespace std; 
+
+const double RATE = 150.00;
+double fee(int hoursWorked, int minutesWorked);
+
+int main(){
+    int hours,minutes;
+    double bill;
+    
+    cout<<"Enter hours and minutes for consultation "<< endl;
+    cin>> hours>> minutes;
+    
+    bill = fee(hours, minutes);
+    
+    cout<<"your time is "<< hours <<" hours and "<< minutes<< " minutes " <<endl;
+    cout<< "your bill is "<< bill<< endl;
+}
+
+double fee(int hoursWorked, int minutesWorked){
+    int quarterHours;
+    
+    minutesWorked= hoursWorked*60 + minutesWorked;
+    quarterHours = minutesWorked/15;
+    return (quarterHours * RATE);
+}
 
 
 
+/// Back to self tests
+
+20. If you use a variable in a function definition, where should you declare
+the variable? In the function definition? In the main part of the program?
+Any place that is convenient?
+//If you use a variable, you should declare it in the function definiion.
 
 
 
+21. Suppose a function named Function1 has a variable named sam declared
+within the definition of Function1, and a function named Function2 also
+has a variable named sam declared within the definition of Function2.
+Will the program compile (assuming everything else is correct)? If the
+program will compile, will it run (assuming that everything else is
+correct)? If it runs, will it generate an error message when run (assuming
+everything else is correct)? If it runs and does not produce an error
+message when run, will it give the correct output (assuming everything
+else is correct)?
+
+//Function1(char sam);
+//Function2(int sam);
+will be fine, even if they are both of the same type because they are local variables to that function
+
+22. The following function is supposed to take as arguments a length
+expressed in feet and inches and return the total number of inches in that
+many feet and inches. For example, total_inches(1,2) is supposed to
+return 14, because 1 foot and 2 inches is the same as 14 inches. Will the
+following function perform correctly? If not, why not?
+double total_inches(int feet, int inches)
+{
+inches = 12 * feet + inches;
+return inches;
+}
+
+//depends on the rest of the function, but should be fine 
+
+23. Write a function declaration and function definition for a function called
+readFilter that has no parameters and that returns a value of type
+double. The function readFilter prompts the user for a value of type
+double and reads the value into a local variable. The function returns the
+value read provided this value is greater than or equal to zero and returns
+zero if the value read is negative.
+#include<iostream>
+using namespace std;
+
+// double readFilter();
+
+int main(){
+}
+double readFilter(){
+  double value;
+  cout<<"gimme a value"<<endl;
+  cin>> value;
+  
+  if (value >=0)
+    return value;
+  else
+    return 0;
 
 
+24. Suppose you have two function definitions with the following function
+declarations:
+double score(double time, double distance);
+int score(double points);
+Which function definition would be used in the following function call
+and why would it be the one used? (x is of type double.)
+finalScore = score(x);
+
+it would be the int score since it only calls for one argument 
+
+25. Suppose you have two function definitions with the following function
+declarations:
+double theAnswer(double data1, double data2);
+double theAnswer(double time, int count);
+Which function definition would be used in the following function call
+and why would it be the one used? (x and y are of type double.)
+x = theAnswer(y, 6.0);
+it would be double data1 and double data2. since the 2nd argument is of type double. 
 
 
+26. Suppose you have two function definitions with the function declarations
+given in Self-Test Exercise 25. Which function definition would be used in
+the following function call and why would it be the one used?
+x = theAnswer(5, 6);
+
+this would be the double time, int count: the first one would be converted to double by c++
+
+27. Suppose you have two function definitions with the function declarations
+given in Self-Test Exercise 25. Which function definition would be used in
+the following function call and why would it be the one used?
+x = theAnswer(5, 6.0);
+
+double data1 and double data2: both would be converted to type double
+
+28. This question has to do with the Programming Example “Revised Pizza-
+Buying Program.” Suppose the evil pizza parlor that is always trying
+to fool customers introduces a square pizza. Can you overload the
+function unitprice so that it can compute the price per square inch
+of a square pizza as well as the price per square inch of a round pizza?
+Why or why not?
+
+too hard 
+
+29. Look at the program in Display 4.18. The main function contains the
+using directive:
+using namespace std;
+Why doesn’t the method unitprice contain this using directive?
+
+The method unitprice doesn't need it because there is nothing that uses the cin/cout that would use std::
 
 
+*****PRACTICE PROBLEMS *************
 
-
-
+1. The length of the hypotenuse of a right-angled triangle is the square root
+of the sum of the squares of the other two sides. Write a function calcH
+that accept two doubles as function arguments and returns a double.
+Prompt the user for the length of base and the perpendicular side of
+the triangle. Use the pow and sqrt functions from cmath to perform the
+calculations.
+2. Modify your program from Practice Program 1 to add a function to
+calculate the perimeter of the triangle. Your function calcPerimeter
+should accept two arguments and return a double. Your calcPerimeter
+function should use your calcH function in working out the perimeter.
+Add the perimeter to the output of your program.
+3. The price of stocks is sometimes given to the nearest eighth of a dollar; for
+example, 297/8 or 891/2. Write a program that computes the value of the
+user’s holding of one stock. The program asks for the number of shares of
+stock owned, the whole-dollar portion of the price, and the fraction portion.
+The fraction portion is to be input as two int values, one for the numerator
+and one for the denominator. The program then outputs the value of
+the user’s holdings. Your program should allow the user to repeat this
+calculation as often as the user wishes and will include a function definition
+that has three int arguments consisting of the whole-dollar portion of the
+price and the two integers that make up the fraction part. The function
+returns the price of one share of stock as a single number of type double.
+4. In an exam, students are given a set of questions and 1 point is awarded
+for every correct answer and 0.25 points are deducted for every incorrect
+answer. Write a program that prompts the user for the number of questions
+that the student answered correctly and the number of incorrect answers.
+The program should use a function calcMarkAsPercentage to calculate
+the student’s final mark as a percentage. Carefully consider the order of
+operations required to calculate the correct score and if you need to cast
+any values.
+5. Modify your program from the previous Practice Program to ask the user
+for the number of students whose marks are to be entered. Your program
+should then prompt the user for the marks of the required number of students. 
+If a student gets a score lower than 0, their mark should be set to
+and output as 0. Your program should then print the highest, lowest, and
+average score of the students whose scores were calculated.
 
 
 
