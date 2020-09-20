@@ -1,1 +1,109 @@
+*** SELF TEST EXERCISES ***
+
+1. What does this output?
+#include <iostream>
+using namespace std;
+
+void friendly();
+void shy(int audienceCount);
+
+int main(){
+    friendly();
+    shy(6);
+    cout<< "one more time "<< endl;
+    shy(2);
+    friendly();
+    cout << "end "<< endl;
+}
+
+void friendly(){
+    cout<<"hello "<< endl;
+}
+
+void shy(int audienceCount){
+    if (audienceCount <5)
+        return;
+    cout <<"dueces" << endl;
+}
+
+
+// input
+hello                                                                                                                                                                                                                                           
+dueces                                                                                                                                                                                                                                          
+one more time                                                                                                                                                                                                                                   
+hello                                                                                                                                                                                                                                           
+end 
+
+
+2.Are you supposed to have a return statement in a void function?
+no
+
+3. Suppose you omitted return in the function definition for initializeScren in 5.2. What efect would it have on the program?
+it wouldnt do anything different. I usually don't use return functions 
+
+
+4. Write a definition of a void function that has three arguments of type int and that outputs to the sfcreen the product of these three arguments. 
+Put the definitoin in a program that reads in three numbers and then calls the function
+
+5. Does your compiler allow void main() and int main()? What warnings are issued if you have int main() and do not supply a return 0?
+- if no return, I'm fine
+- if used void main() - compiler said needs to return int
+
+6. Is a call to void function used as a statment or is it used as an expression?
+Statement
+
+
+//Call by reference example
+#include <iostream>
+using namespace std;
+
+void getNumbers(int& input1, int& input2);
+// & is a call by reference
+
+void swapValues(int& variable1, int& variable2);
+
+void showResults(int output1, int output2);
+
+int main(){
+    
+    int firstNum = 0, secondNum = 0;
+    
+    getNumbers(firstNum, secondNum);
+    swapValues(firstNum, secondNum);
+    showResults(firstNum, secondNum);
+}
+
+void getNumbers(int& input1, int& input2){
+    cout<< "enter two numbers "<< endl;
+    cin>> input1 >> input2;
+}
+
+void swapValues(int& variable1, int& variable2){
+    int temp;
+    temp = variable1;
+    variable1 = variable2;
+    variable2 = temp;
+    // so temp = variable1 and 2??
+}
+
+void showResults(int output1, int output2){
+    cout<<"in reverse the numbers are " << output1 <<" and " << output2 << endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
