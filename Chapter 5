@@ -95,8 +95,47 @@ void showResults(int output1, int output2){
 
 
 
-
-
+7. What is the output of the following program?
+#include <iostream>
+void figureMeOut(int& x, int y, int& z);
+int main()
+{
+using namespace std;
+int a, b, c;
+a = 10;
+b = 20;
+c = 30;
+figureMeOut(a, b, c);
+cout << a << " " << b << " " << c;
+return 0;
+}
+void figureMeOut(int& x, int y, int& z)
+{
+using namespace std;
+cout << x << " " << y << " " << z << endl;
+x = 1;
+y = 2;
+z = 3;
+cout << x << " " << y << " " << z << endl;
+}
+8. What would be the output of the program in Display 5.4 if you omit the
+ampersands, &, from the first parameter in the function declaration and
+function heading of swapValues? The ampersand is not removed from the
+second parameter.
+9. What would be the output of the program in Display 5.6 if you change
+the function declaration for the function doStuff to the following and
+you change the function header to match, so that the formal parameter
+par2Ref is changed to a call-by-value parameter:
+void doStuff(int par1Value, int par2Ref);
+10. Write a void function definition for a function called zeroBoth that has
+two reference parameters, both of which are variables of type int, and sets
+the values of both variables to 0.
+11. Write a void function definition for a function called addTax. The function
+addTax has two formal parameters: taxRate, which is the amount of sales
+tax expressed as a percentage, and cost, which is the cost of an item before
+tax. The function changes the value of cost so that it includes sales tax.
+12. Can a function that returns a value have a call-by-reference parameter?
+May a function have both call-by-value and call-by-reference parameters?
 
 
 
