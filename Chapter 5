@@ -118,25 +118,83 @@ y = 2;
 z = 3;
 cout << x << " " << y << " " << z << endl;
 }
+
+
 8. What would be the output of the program in Display 5.4 if you omit the
 ampersands, &, from the first parameter in the function declaration and
 function heading of swapValues? The ampersand is not removed from the
 second parameter.
+5 and 5 if you entered 5 and 10, 10 is not swapped and a ==b
+
 9. What would be the output of the program in Display 5.6 if you change
 the function declaration for the function doStuff to the following and
 you change the function header to match, so that the formal parameter
 par2Ref is changed to a call-by-value parameter:
 void doStuff(int par1Value, int par2Ref);
+
+undefined reference to `doStuff(int, int&)'
+
+ 
 10. Write a void function definition for a function called zeroBoth that has
 two reference parameters, both of which are variables of type int, and sets
 the values of both variables to 0.
+#include <iostream>
+using namespace std;
+
+void zeroBoth(int par, int& ref);
+
+int main(){
+    int n1 = 1;
+    int n2 = 2;
+    zeroBoth(n1,n2);
+    cout << "n1 after value call " << n1<< endl;
+    cout << "n2 after ref call "<< n2 << endl;
+}
+
+void zeroBoth(int par, int& ref){
+    par = 0;
+    ref = 0;
+    cout << "par is "<< par << endl;
+    cout << "ref is "<< ref << endl;
+}
+
+par is 0                                                                                                                                      
+ref is 0                                                                                                                                      
+n1 after value call 1                                                                                                                         
+n2 after ref call 0 
+
 11. Write a void function definition for a function called addTax. The function
 addTax has two formal parameters: taxRate, which is the amount of sales
 tax expressed as a percentage, and cost, which is the cost of an item before
 tax. The function changes the value of cost so that it includes sales tax.
+
+#include <iostream>
+using namespace std;
+
+void addTax(int taxRate, int cost);
+
+int main(){
+    int items, cost, bill;
+    cout<<"Enter how many items "<< endl;
+    cin >> items;
+    cout<< "enter how much it cost" << endl;
+    cin >> cost;
+    
+
+    cout<< "Your total is "<< bill<< endl;
+}
+
+void addTax(int taxRate, int cost){
+    int total;
+    taxRate = 0.005;
+    cout<< total+ (total * taxRate)<< endl;
+}
+
+
 12. Can a function that returns a value have a call-by-reference parameter?
 May a function have both call-by-value and call-by-reference parameters?
 
+Yes they can have both 
 
 
 
