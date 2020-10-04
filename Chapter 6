@@ -111,3 +111,42 @@ inStream.close( );
 outStream.close( );
 return 0;
 }
+19. What output will be produced when the following lines are executed,
+assuming the file list.dat contains the data shown (and assuming the
+lines are embedded in a complete and correct program with the proper
+include directives)?
+ifstream ins;
+ins.open("list.dat");
+int count = 0, next;
+while (ins >> next)
+{
+count++;
+cout << next << endl;
+}
+ins.close( );
+cout << count;
+The file list.dat contains the following three numbers (and nothing
+more)
+1 2
+3
+20. Write the definition for a void function called toScreen. The function
+toScreen has one formal parameter called fileStream, which is of type
+ifstream. The precondition and postcondition for the function are as
+follows:
+//Precondition: The stream fileStream has been connected
+//to a file with a call to the member function open. The
+//file contains a list of integers (and nothing else).
+//Postcondition: The numbers in the file connected to
+//fileStream have been written to the screen one per line.
+//(This function does not close the file.)
+21. (This exercise is for those who have studied the optional section entitled
+“File Names as Input.”) Suppose you are given the following string
+variable declaration and input statement:
+
+#include <iostream>
+using namespace std;
+// ...
+char name[21];
+cout >> name;
+Suppose this code segment is embedded in a correct program. What is the
+longest name that can be entered into the string variable name?
