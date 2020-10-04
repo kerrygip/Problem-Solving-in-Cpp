@@ -34,3 +34,80 @@ and give examples of usage of each.
 to the file to enable reading the first line a second time?
 11. In the text it says “a file has two names.” What are the two names? When
 is each name used?
+12. What output will be produced when the following lines are executed
+(assuming the lines are embedded in a complete and correct program
+with the proper include directives)?
+cout << "*";
+cout.width(5);
+cout << 123
+<< "*" << 123 << "*" << endl;
+cout << "*" << setw(5) << 123
+<< "*" << 123 << "*" << endl;
+13. What output will be produced when the following lines are executed
+(assuming the lines are embedded in a complete and correct program
+with the proper include directives)?
+cout << "*" << setw(5) << 123;
+cout.setf(ios::left);
+cout << "*" << setw(5) << 123;
+cout.setf(ios::right);
+cout << "*" << setw(5) << 123 << "*" << endl;
+14. What output will be produced when the following lines are executed
+(assuming the lines are embedded in a complete and correct program
+with the proper include directives)?
+cout << "*" << setw(5) << 123 << "*"
+<< 123 << "*" << endl;
+cout.setf(ios::showpos);
+cout << "*" << setw(5) << 123 << "*"
+<< 123 << "*" << endl;
+cout.unsetf(ios::showpos);
+cout.setf(ios::left);
+cout << "*" << setw(5) << 123 << "*"
+<< setw(5) << 123 << "*" << endl;
+15. What output will be sent to the file stuff.dat when the following lines
+are executed (assuming the lines are embedded in a complete and correct
+program with the proper include directives)?
+ofstream fout;
+fout.open("stuff.dat");
+fout << "*" << setw(5) << 123 << "*"
+<< 123 << "*" << endl;
+fout.setf(ios::showpos);
+fout << "*" << setw(5) << 123 << "*"
+<< 123 << "*" << endl;
+fout.unsetf(ios::showpos);
+fout.setf(ios::left);
+fout << "*" << setw(5) << 123 << "*"
+<< setw(5) << 123 << "*" << endl;
+16. What output will be produced when the following line is executed
+(assuming the line is embedded in a complete and correct program with
+the proper include directives)?
+cout << "*" << setw(3) << 12345 << "*" << endl;
+17. In formatting output, the following flag constants are used with the
+stream member function setf. What effect does each have?
+a. ios::fixed
+b. ios::scientific
+c. ios::showpoint
+d. ios::showpos
+e. ios::right
+f. ios::left
+18. Here is a code segment that reads input from infile.dat and sends
+output to outfile.dat. What changes are necessary to make the output
+go to the screen? (The input is still to come from infile.dat.)
+//Problem for Self Test. Copies three int numbers
+//between files.
+#include <fstream>
+int main( )
+{
+using namespace std;
+ifstream inStream;
+ofstream outStream;
+inStream.open("infile.dat");
+outStream.open("outfile.dat");
+int first, second, third;
+inStream >> first >> second >> third;
+outStream << "The sum of the first 3" << endl
+<< "numbers in infile.dat is " << endl
+<< (first + second + third) << endl;
+inStream.close( );
+outStream.close( );
+return 0;
+}
