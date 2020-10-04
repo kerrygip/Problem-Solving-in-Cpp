@@ -1,0 +1,36 @@
+** SELF TEST EXERCISES ****
+
+1. Suppose you are writing a program that uses a stream called fin that
+will be connected to an input file, and a stream called fout that will be
+connected to an output file. How do you declare fin and fout? What
+include directive, if any, do you need to place in your program file?
+2. Suppose you are continuing to write the program discussed in the
+previous exercise and you want it to take its input from the file stuff1.
+dat and send its output to the file stuff2.dat. What statements do you
+need to place in your program in order to connect the stream fin to
+the file stuff1.dat and to connect the stream fout to the file stuff2.
+dat? Be sure to include checks to make sure that the openings were
+successful.
+3. Suppose that you are still writing the same program that we discussed in
+the previous two exercises and you reach the point at which you no longer
+need to get input from the file stuff1.dat and no longer need to send
+output to the file stuff2.dat. How do you close these files?
+4. Suppose you want to change the program in Display 6.1 so that it sends
+its output to the screen instead of the file outfile.dat. (The input should
+still come from the file infile.dat.) What changes do you need to make
+to the program?
+5. What include directive do you need to place in your program file if your
+program uses the function exit?
+6. Continuing Self-Test Exercise 5, what does exit(1) do with its argument?
+7. Suppose bla is an object, dobedo is a member function of the object bla,
+and dobedo takes one argument of type int. How do you write a call to
+the member function dobedo of the object bla using the argument 7?
+8. What characteristics of files do ordinary program variables share?
+What characteristics of files are different from ordinary variables in a
+program?
+9. Name at least three member functions associated with an iostream object,
+and give examples of usage of each.
+10. A program has read half of the lines in a file. What must the program do
+to the file to enable reading the first line a second time?
+11. In the text it says “a file has two names.” What are the two names? When
+is each name used?
