@@ -4,6 +4,9 @@
 will be connected to an input file, and a stream called fout that will be
 connected to an output file. How do you declare fin and fout? What
 include directive, if any, do you need to place in your program file?
+
+#include<fstream>
+
 2. Suppose you are continuing to write the program discussed in the
 previous exercise and you want it to take its input from the file stuff1.
 dat and send its output to the file stuff2.dat. What statements do you
@@ -11,29 +14,103 @@ need to place in your program in order to connect the stream fin to
 the file stuff1.dat and to connect the stream fout to the file stuff2.
 dat? Be sure to include checks to make sure that the openings were
 successful.
+
+#include<fstream>
+using namespace std;
+
+int main(){
+  
+  ifstream infile;
+  ofstream outfile;
+  int input;
+  
+  infile.open("stuff1.dat")
+  outfile.open("stuff2.dat")
+  
+  infile >> input;
+  outfile << input;
+ 
+  
+  
+}
+
 3. Suppose that you are still writing the same program that we discussed in
 the previous two exercises and you reach the point at which you no longer
 need to get input from the file stuff1.dat and no longer need to send
 output to the file stuff2.dat. How do you close these files?
+
+infile.close();
+outfile.close();
+
 4. Suppose you want to change the program in Display 6.1 so that it sends
 its output to the screen instead of the file outfile.dat. (The input should
 still come from the file infile.dat.) What changes do you need to make
 to the program?
+
+#include<fstream>
+#include<iostream>
+using namespace std;
+
+int main(){
+   ifstream instream;
+
+   instream.open("infile.dat");
+   int first, second, third;
+   instream>> first>> second>> third;
+
+   cout<<"The sum of the first 3 numbers is \n"
+      << (first+second + third) << endl;
+  
+   instream.close()
+
+}
+
 5. What include directive do you need to place in your program file if your
 program uses the function exit?
+
+#include <cstdlib>
+//c- std- library HA clever 
+
 6. Continuing Self-Test Exercise 5, what does exit(1) do with its argument?
+
+It calls to exit if due to an error
+exit(0) is used when there is no error. 
+But it makes no difference what integer we use, 
+but 0 and 1 should be used for consistency 
+
 7. Suppose bla is an object, dobedo is a member function of the object bla,
 and dobedo takes one argument of type int. How do you write a call to
 the member function dobedo of the object bla using the argument 7?
+
+bla.dobedo(int 7)
+
 8. What characteristics of files do ordinary program variables share?
 What characteristics of files are different from ordinary variables in a
 program?
+
+They share the open function and the need for <fstream>
+
 9. Name at least three member functions associated with an iostream object,
 and give examples of usage of each.
+
+file.open()
+file.close()
+file.precision()
+file.readlines()
+
 10. A program has read half of the lines in a file. What must the program do
 to the file to enable reading the first line a second time?
+
+Reopen the file and code it properly to read the whole thing using a for loop to read the whole file
+
+
 11. In the text it says “a file has two names.” What are the two names? When
 is each name used?
+
+external file name - name of physical file
+stream name - working name of the file in code 
+
+
 12. What output will be produced when the following lines are executed
 (assuming the lines are embedded in a complete and correct program
 with the proper include directives)?
@@ -43,17 +120,31 @@ cout << 123
 << "*" << 123 << "*" << endl;
 cout << "*" << setw(5) << 123
 << "*" << 123 << "*" << endl;
+
+#include<iostream>
+#include<iomanip>
+using namespace std; 
+
+*  123*123*                                                                                                                                   
+*  123*123* 
+
+
 13. What output will be produced when the following lines are executed
 (assuming the lines are embedded in a complete and correct program
 with the proper include directives)?
+
 cout << "*" << setw(5) << 123;
 cout.setf(ios::left);
 cout << "*" << setw(5) << 123;
 cout.setf(ios::right);
 cout << "*" << setw(5) << 123 << "*" << endl;
+
+*  123*123  *  123*
+
 14. What output will be produced when the following lines are executed
 (assuming the lines are embedded in a complete and correct program
 with the proper include directives)?
+
 cout << "*" << setw(5) << 123 << "*"
 << 123 << "*" << endl;
 cout.setf(ios::showpos);
@@ -63,9 +154,16 @@ cout.unsetf(ios::showpos);
 cout.setf(ios::left);
 cout << "*" << setw(5) << 123 << "*"
 << setw(5) << 123 << "*" << endl;
+
+*  123*123*                                                                                                                                   
+* +123*+123*                                                                                                                                  
+*123  *123  * 
+
 15. What output will be sent to the file stuff.dat when the following lines
 are executed (assuming the lines are embedded in a complete and correct
 program with the proper include directives)?
+
+
 ofstream fout;
 fout.open("stuff.dat");
 fout << "*" << setw(5) << 123 << "*"
@@ -77,21 +175,36 @@ fout.unsetf(ios::showpos);
 fout.setf(ios::left);
 fout << "*" << setw(5) << 123 << "*"
 << setw(5) << 123 << "*" << endl;
+
+in stuff.dat:
+*  123*123*
+* +123*+123*
+*123  *
+
+
+
 16. What output will be produced when the following line is executed
 (assuming the line is embedded in a complete and correct program with
 the proper include directives)?
 cout << "*" << setw(3) << 12345 << "*" << endl;
+
+*12345*
+
 17. In formatting output, the following flag constants are used with the
 stream member function setf. What effect does each have?
-a. ios::fixed
-b. ios::scientific
-c. ios::showpoint
-d. ios::showpos
-e. ios::right
-f. ios::left
+
+a. ios::fixed - floating point is not written in e notation 
+b. ios::scientific - floating point numbers are written in e- notation
+c. ios::showpoint - a decimal point and traiing zeros are always shown
+d. ios::showpos - a + sign will show before positive numbers
+e. ios::right - the next output will show up to the right at whatever width set 
+f. ios::left - the next output will show at the left at whatever width set 
+
+
 18. Here is a code segment that reads input from infile.dat and sends
 output to outfile.dat. What changes are necessary to make the output
 go to the screen? (The input is still to come from infile.dat.)
+
 //Problem for Self Test. Copies three int numbers
 //between files.
 #include <fstream>
@@ -111,10 +224,15 @@ inStream.close( );
 outStream.close( );
 return 0;
 }
+
+- change the outStream to cout and add #include<iostream> 
+- could also remove everything related to outStream 
+
 19. What output will be produced when the following lines are executed,
 assuming the file list.dat contains the data shown (and assuming the
 lines are embedded in a complete and correct program with the proper
 include directives)?
+
 ifstream ins;
 ins.open("list.dat");
 int count = 0, next;
