@@ -1,0 +1,160 @@
+I don't care for strings, I'm just here for the vectors
+There's only 2 questions and a small section for vectors. 
+Going back to the arrays chapter then. 
+
+1. Which of the following declarations are equivalent?
+char stringVar[10] = "Hello";
+char stringVar[10] = {'H', 'e', 'l', 'l', 'o', '\0'};
+char stringVar[10] = {'H', 'e', 'l', 'l', 'o'};
+char stringVar[6] = "Hello";
+char stringVar[] = "Hello";
+2. What C string will be stored in singingString after the following code is
+run?
+char singingString[20] = "DoBeDo";
+strcat(singingString, " to you");
+Assume that the code is embedded in a complete and correct program and
+that an include directive for <cstring> is in the program file.
+3. What (if anything) is wrong with the following code?
+char stringVar[] = "Hello";
+strcat(stringVar, " and Good-bye.");
+cout << stringVar;
+Assume that the code is embedded in a complete program and that an
+include directive for <cstring> is in the program file.
+4. Suppose the function strlen (which returns the length of its string
+argument) was not already defined for you. Give a function definition for
+strlen. Note that strlen has only one argument, which is a C string. Do
+not add additional arguments; they are not needed.
+5. What is the maximum length of a string that can be placed in the string
+variable declared by the following declaration? Explain.
+char s[6];
+6. How many characters are in each of the following character and string
+constants?
+a. '\n'
+b. 'n'
+c. "Mary"
+d. "M"
+e. "Mary\n"
+7. Since character strings are just arrays of char, why does the text caution
+you not to confuse the following declaration and initialization?
+char shortString[] = "abc";
+char shortString[] = {'a', 'b', 'c'};
+8. Given the following declaration and initialization of the string variable,
+write a loop to assign 'X' to all positions of this string variable, keeping
+the length the same.
+char ourString[15] = "Hi there!";
+9. Given the declaration of a C-string variable, where SIZE is a defined
+constant:
+char ourString[SIZE];
+The C-string variable ourString has been assigned in code not shown
+here. For correct C-string variables, the following loop reassigns all positions
+of ourString the value 'X', leaving the length the same as before.
+Assume this code fragment is embedded in an otherwise complete and
+correct program. Answer the questions following this code fragment:
+int index = 0;
+while (ourString[index] != '\0')
+{
+ourString[index] = 'X';
+index++;
+}
+a. Explain how this code can destroy the contents of memory beyond the
+end of the array.
+b. Modify this loop to protect against inadvertently changing memory
+beyond the end of the array.
+10. Write code using a library function to copy the string constant "Hello"
+into the string variable declared below. Be sure to include the necessary
+header file to get the declaration of the function you use.
+char aString[10];
+11. What string will be output when this code is run? (Assume, as always, that
+this code is embedded in a complete, correct program.)
+char song[10] = "I did it ";
+char franksSong[20];
+strcpy( franksSong, song );
+strcat( franksSong, "my way!");
+cout << franksSong << endl;
+12. What is the problem (if any) with this code?
+char aString[20] = "How are you? ";
+strcat(aString, "Good, I hope.");
+13. Consider the following code (and assume it is embedded in a complete
+and correct program and then run):
+char a[80], b[80];
+cout << "Enter some input:\n";
+cin >> a >> b;
+cout << a << '−' << b << "END OF OUTPUT\n";
+If the dialogue begins as follows, what will be the next line of output?
+Enter some input:
+The
+time is now.
+14. Consider the following code (and assume it is embedded in a complete
+and correct program and then run):
+char myString[80];
+cout << "Enter a line of input:\n";
+cin.getline(myString, 6);
+cout << myString << "<END OF OUTPUT";
+If the dialogue begins as follows, what will be the next line of output?
+Enter a line of input:
+May the hair on your toes grow long and curly.
+15. Consider the following code (and assume that it is embedded in a
+complete and correct program and then run):
+string s1, s2;
+cout << "Enter a line of input:\n";
+cin >> s1 >> s2;
+cout << s1 << "*" << s2 << "<END OF OUTPUT";
+If the dialogue begins as follows, what will be the next line of output?
+Enter a line of input:
+A string is a joy forever!
+16. Consider the following code (and assume that it is embedded in a
+complete and correct program and then run):
+string s;
+cout << "Enter a line of input:\n";
+getline(cin, s);
+cout << s << "<END OF OUTPUT";
+If the dialogue begins as follows, what will be the next line of output?
+Enter a line of input:
+A string is a joy forever!
+17. Consider the following code:
+string s1, s2("Hello");
+cout << "Enter a line of input:\n";
+cin >> s1;
+if (s1 == s2)
+cout << "Equal\n";
+else
+cout << "Not equal\n";
+If the dialogue begins as follows, what will be the next line of output?
+Enter a line of input:
+Hello friend!
+18. What is the output produced by the following code?
+string s1, s2("Hello");
+s1 = s2;
+s2[0] = 'J';
+cout << s1 << " " << s2;
+
+
+/****************8.3 VECTORS*********************/
+19. Is the following program legal? If so, what is the output?
+#include <iostream>
+#include <vector>
+using namespace std;
+int main( )
+{
+vector<int> v(10);
+int i;
+for (i = 0; i < v.size( ); i++)
+v[i] = i;
+vector<int> copy;
+copy = v;
+v[0] = 42;
+for (i = 0; i < copy.size( ); i++)
+cout << copy[i] << " ";
+cout << endl;
+return 0;
+}
+
+
+0 1 2 3 4 5 6 7 8 9 
+plot twist. You made copy into v first, so because you made copy and THEN made v[0] = 42, 
+copy is still the original and v is updated with the 42 in the [0] position 
+
+20. What is the difference between the size and the capacity of a vector?
+size is the actual size of the vector
+capacity is the amount of size for the vector possible 
+20. What is the difference between the size and the capacity of a vector?
